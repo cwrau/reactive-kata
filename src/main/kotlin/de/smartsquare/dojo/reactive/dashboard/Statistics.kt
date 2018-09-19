@@ -1,3 +1,5 @@
 package de.smartsquare.dojo.reactive.dashboard
 
-data class Statistics(val goalsPerPlayer: Map<String, Int>)
+import de.smartsquare.dojo.reactive.tournament.Player
+
+data class Statistics(val goalsPerPlayer: Map<Player, Goals>)
