@@ -9,7 +9,7 @@ You have to wind up the project of your co-worker Jeff. The task is to build a d
 1. [Summarize](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/summarizer/StatisticsSummarizer.kt) the games streamed by the tournament per second in a [statistics](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/dashboard/Statistics.kt) object. 
 2. Wire everything up by implementing the [adapter](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/summarizer/StatisticsSummarizerDashboardAdapter.kt) to the [dashboard](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/dashboard/Dashboard.kt). _Note: The dashboard is very unstable and thereforce timeouts and exceptions can occour randomly._
 
-_You will get a gold start at the good noodle board if you really stream the statistics instead of .take(n) and then also handle the backpressure properly._
+_You will get a gold star at the good noodle board if you really stream the statistics instead of .take(n) and also handle the backpressure properly._
 
 ## Dataflow
 ![](https://image.ibb.co/mYwJpz/Untitled_Diagram_1.png)
