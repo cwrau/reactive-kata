@@ -6,16 +6,6 @@ import reactor.test.StepVerifier
 internal class RandomTournamentGeneratorSpecification {
 
     @Test
-    fun `goal scorer are random member of the left team`() {
-        StepVerifier.create(RandomTournamentGenerator().fetch(), 100)
-                .expectNextMatches {
-                    it.leftTeam.contains(it.goals[0])
-                }
-                .thenCancel()
-                .verify()
-    }
-
-    @Test
     fun `no duplicate player in left team`() {
         StepVerifier.create(RandomTournamentGenerator().fetch(), 100)
                 .expectNextMatches {
