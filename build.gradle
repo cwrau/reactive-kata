@@ -67,6 +67,7 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
     implementation "io.projectreactor:reactor-core:$reactorVersion"
+    implementation "io.projectreactor.addons:reactor-extra:$reactorVersion"
 
     testImplementation "io.projectreactor:reactor-test:$reactorVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
