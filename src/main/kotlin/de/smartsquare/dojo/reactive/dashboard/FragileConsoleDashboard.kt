@@ -13,7 +13,7 @@ class FragileConsoleDashboard : Dashboard {
 
     /**
      * This method could be slow.
-     * @throws RuntimeException sometimes.
+     * @throws SomethingWentWrongException sometimes.
      */
     override fun refresh(statistics: Statistics) =
             when {
