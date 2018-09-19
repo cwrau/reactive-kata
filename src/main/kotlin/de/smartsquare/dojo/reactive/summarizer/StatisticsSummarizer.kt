@@ -1,7 +1,6 @@
 package de.smartsquare.dojo.reactive.summarizer
 
 import de.smartsquare.dojo.reactive.dashboard.Statistics
-import de.smartsquare.dojo.reactive.tournament.RandomTournamentGenerator
 import de.smartsquare.dojo.reactive.tournament.Tournament
 import reactor.core.publisher.Flux
 
