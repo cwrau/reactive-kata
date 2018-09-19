@@ -1,0 +1,28 @@
+failFast: true
+
+comments:
+  UndocumentedPublicClass:
+    active: false
+  UndocumentedPublicFunction:
+    active: false
+
+potential-bugs:
+  UnsafeCast:
+    active: false
+
+style:
+  ExpressionBodySyntax:
+    active: false
+  ForbiddenComment:
+    active: true
+    values: 'FIXME:,STOPSHIP:'
+  DataClassContainsFunctions:
+    active: false
+  MagicNumber:
+    active: false
+  UnusedPrivateMember:
+    active: false
+
+exceptions:
+  NotImplementedDeclaration:
+    active: false
