@@ -1,5 +1,5 @@
 # reactive-dojo
-[![forthebadge](https://forthebadge.com/images/badges/not-an-issue.svg)](https://forthebadge.com)
+
 
 
 
