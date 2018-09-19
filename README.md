@@ -3,7 +3,7 @@
 This kata is for use as introduction to reactive programming with kotlin and project reactor. The slides, which are a prerequisite for this dojo, are available [here](http://deen13.github.io/talks/reactive). 
 
 ## Problem Description
-You have to wind up the project of your co-worker Jeff. The task is to build a dashboard for a foosball tournament. Jeff already implmeneted the connection to the foosball tables and a **unstable** poc for the dashboard user interface. The datasource is the flux from the [tournament](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/tournament/Tournament.kt). 
+You have to wind up the project of your co-worker Jeff. The task is to build a dashboard for a foosball tournament. Jeff already implemented the connection to the foosball tables and a **unstable** poc for the dashboard user interface. The datasource is the flux from the [tournament](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/tournament/Tournament.kt). 
 
 ## Exercises 
 1. [Summarize](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/summarizer/StatisticsSummarizer.kt) the games streamed by the tournament per second in a [statistics](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/dashboard/Statistics.kt) object. 
