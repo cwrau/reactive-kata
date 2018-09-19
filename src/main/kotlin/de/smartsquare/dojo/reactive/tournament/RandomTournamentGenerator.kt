@@ -6,7 +6,7 @@ import java.time.Duration
 /**
  * This class is a generator for randomly composed games.
  */
-class SmartsquareTournament : Tournament {
+class RandomTournamentGenerator : Tournament {
 
     companion object {
         private const val GAME_INTERVAL = 10L

@@ -12,6 +12,7 @@ buildscript {
         kluentVersion = '1.41'
         mockkVersion = '1.8.6'
         reactorVersion = '3.2.0.RC1'
+        dokkaVersion = "0.9.17"
 	}
 	repositories {
 		mavenCentral()
@@ -21,7 +22,8 @@ buildscript {
 	dependencies {
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
 		classpath "org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}"
-		classpath "com.github.ben-manes:gradle-versions-plugin:$gradleVersionsPluginVersion"
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:${dokkaVersion}"
+        classpath "com.github.ben-manes:gradle-versions-plugin:$gradleVersionsPluginVersion"
 		classpath "gradle.plugin.io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detektVersion"
 		classpath "gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:$ktlintGradleVersion"
         classpath "com.vanniktech:gradle-android-junit-jacoco-plugin:$jacocoPluginVersion"
@@ -30,6 +32,7 @@ buildscript {
 
 apply plugin: 'idea'
 apply plugin: 'kotlin'
+apply plugin: 'org.jetbrains.dokka'
 apply plugin: 'com.github.ben-manes.versions'
 apply plugin: 'org.jlleitschuh.gradle.ktlint'
 apply plugin: 'io.gitlab.arturbosch.detekt'
@@ -80,6 +83,11 @@ detekt {
         config = 'config/detekt/detekt.yml'
         output = "$buildDir/reports/detekt"
     }
+}
+
+dokka {
+    outputFormat = 'html'
+    outputDirectory = "$buildDir/javadoc"
 }
 
 ktlint {

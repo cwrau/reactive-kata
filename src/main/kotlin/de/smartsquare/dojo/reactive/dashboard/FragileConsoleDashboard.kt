@@ -4,7 +4,8 @@ import java.lang.RuntimeException
 import java.util.Random
 
 /**
- * This class is a unstable dashboard which interacts as sink for the statistics.
+ * This class is a unstable dashboard which interacts as sink for the statistics
+ * and uses the system console as user interface.
  */
 class FragileConsoleDashboard : Dashboard {
 
