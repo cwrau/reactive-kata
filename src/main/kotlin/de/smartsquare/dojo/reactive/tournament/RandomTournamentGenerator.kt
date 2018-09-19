@@ -2,7 +2,7 @@ package de.smartsquare.dojo.reactive.tournament
 
 import reactor.core.publisher.Flux
 import java.time.Duration
-import java.util.*
+import java.util.Random
 
 /**
  * This class is a generator for randomly composed games.
@@ -23,6 +23,6 @@ class RandomTournamentGenerator : Tournament {
         return Game(leftTeam, rightTeam, goals)
     }
 
-    @Suppress("NOTHING_TO_INLINE")
+    @Suppress("NOTHING_TO_INLINE", "FunctionMinLength")
     private inline infix fun List<String>.or(other: List<String>) = if (Random().nextInt() % 2 == 0) this else other
 }

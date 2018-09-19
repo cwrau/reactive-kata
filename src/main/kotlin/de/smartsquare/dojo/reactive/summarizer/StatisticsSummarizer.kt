@@ -2,9 +2,9 @@ package de.smartsquare.dojo.reactive.summarizer
 
 import de.smartsquare.dojo.reactive.dashboard.Statistics
 import de.smartsquare.dojo.reactive.tournament.Tournament
-import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
 
 class StatisticsSummarizer(private val tournament: Tournament) {
 
-    fun summarize(): Flux<Statistics> = TODO("Summarize the tournament information for every second")
+    fun summarizeGamesOfLastSecond(): Mono<Statistics> = TODO("Analyze games per second and map to statistics object")
 }

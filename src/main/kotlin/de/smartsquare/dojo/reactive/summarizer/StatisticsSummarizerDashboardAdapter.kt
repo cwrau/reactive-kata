@@ -7,7 +7,5 @@ class StatisticsSummarizerDashboardAdapter(
     private val dashboard: Dashboard
 ) {
 
-    fun start() {
-        TODO("Forward the statistics to the (unstable?) dashboard")
-    }
+    fun start(): Nothing = TODO("Forward statistics to the dashboard and mind possible exceptions or timeouts")
 }

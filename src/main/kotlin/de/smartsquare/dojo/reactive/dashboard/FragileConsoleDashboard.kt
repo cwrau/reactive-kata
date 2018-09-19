@@ -1,6 +1,5 @@
 package de.smartsquare.dojo.reactive.dashboard
 
-import java.lang.RuntimeException
 import java.util.Random
 import java.util.logging.Logger
 
