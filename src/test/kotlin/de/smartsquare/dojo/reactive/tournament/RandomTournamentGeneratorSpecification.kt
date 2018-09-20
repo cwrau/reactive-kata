@@ -9,7 +9,7 @@ internal class RandomTournamentGeneratorSpecification {
     fun `no duplicate player in left team`() {
         StepVerifier.create(RandomTournamentGenerator().fetch(), 100)
                 .expectNextMatches {
-                    it.leftTeam[0] != it.leftTeam[1]
+                    it.leftTeam.firstPlayer() != it.leftTeam.secondPlayer()
                 }
                 .thenCancel()
                 .verify()
@@ -19,7 +19,7 @@ internal class RandomTournamentGeneratorSpecification {
     fun `no duplicate player in right team`() {
         StepVerifier.create(RandomTournamentGenerator().fetch(), 100)
                 .expectNextMatches {
-                    it.rightTeam[0] != it.rightTeam[1]
+                    it.rightTeam.firstPlayer() != it.rightTeam.secondPlayer()
                 }
                 .thenCancel()
                 .verify()
