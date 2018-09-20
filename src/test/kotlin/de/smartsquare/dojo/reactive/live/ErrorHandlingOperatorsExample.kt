@@ -34,8 +34,6 @@ class ErrorHandlingOperatorsExample {
                                 .retryMax(10)
                 )
                 .log()
-                .subscribe()
-
-        Thread.sleep(10000)
+                .block()
     }
 }
