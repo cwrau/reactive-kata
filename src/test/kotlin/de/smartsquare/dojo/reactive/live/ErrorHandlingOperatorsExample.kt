@@ -6,7 +6,7 @@ import reactor.core.scheduler.Schedulers
 import reactor.retry.Retry.anyOf
 import java.time.Duration
 
-class ErrorHandlingOperatorsExample {
+internal class ErrorHandlingOperatorsExample {
 
     @Test
     fun retry() {

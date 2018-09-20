@@ -9,7 +9,7 @@ import reactor.core.scheduler.Schedulers
 import java.time.Duration
 import java.util.Arrays.asList
 
-class FluxAndMonoExample {
+internal class FluxAndMonoExample {
 
     @Test
     fun `creation of a flux`() {
