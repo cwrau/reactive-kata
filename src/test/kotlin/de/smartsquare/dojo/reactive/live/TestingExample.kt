@@ -10,7 +10,6 @@ import reactor.core.publisher.toFlux
 import reactor.test.StepVerifier
 import java.util.Arrays.asList
 
-
 internal class TestingExample {
 
     @Test
@@ -22,7 +21,7 @@ internal class TestingExample {
                 .expectNext("foo")
                 .expectNext("bar")
                 .expectErrorMessage("boom")
-                .verify();
+                .verify()
     }
 
     private fun <T> appendBoomError(source: Flux<T>): Flux<T> =

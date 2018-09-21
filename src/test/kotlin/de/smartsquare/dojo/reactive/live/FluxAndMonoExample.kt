@@ -29,19 +29,19 @@ internal class FluxAndMonoExample {
 
     @Test
     fun `flux to mono`() {
-        val last: Mono<String> = Flux.just("another", "coding", "dojo")
+        Flux.just("another", "coding", "dojo")
                 .takeLast(1)
                 .toMono()
     }
 
     @Test
     fun `mono and mono to flux`() {
-        val flux: Flux<String> = "x".toMono().concatWith { "d".toMono() }
+        "x".toMono().concatWith { "d".toMono() }
     }
 
     @Test
     fun `infinite flux`() {
-        val flux = Flux.interval(Duration.ofMillis(10))
+        Flux.interval(Duration.ofMillis(10))
                 .subscribeOn(Schedulers.elastic())
                 .map { "B" }
                 .subscribe(::println)
