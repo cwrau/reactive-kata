@@ -1,11 +1,13 @@
 package de.smartsquare.dojo.reactive.live
 
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import reactor.core.publisher.Mono
 import reactor.core.scheduler.Schedulers
 import reactor.retry.Retry.anyOf
 import java.time.Duration
 
+@Tag("Example")
 internal class ErrorHandlingOperatorsExample {
 
     @Test
@@ -18,7 +20,7 @@ internal class ErrorHandlingOperatorsExample {
 
     @Test
     fun timeout() {
-        Mono.fromCallable { Thread.sleep(5000).let { "Data" } }
+        Mono.fromCallable { Thread.sleep(50).let { "Data" } }
                 .timeout(Duration.ofMillis(100), Mono.just("Cached Data"))
                 .log()
                 .subscribe(::println)

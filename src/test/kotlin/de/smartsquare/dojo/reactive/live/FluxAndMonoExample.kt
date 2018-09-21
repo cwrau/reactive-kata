@@ -1,5 +1,6 @@
 package de.smartsquare.dojo.reactive.live
 
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
@@ -9,21 +10,22 @@ import reactor.core.scheduler.Schedulers
 import java.time.Duration
 import java.util.Arrays.asList
 
+@Tag("Example")
 internal class FluxAndMonoExample {
 
     @Test
     fun `creation of a flux`() {
-        Flux.just("another", "coding", "dojo").subscribe(::print)
+        Flux.just("another", "coding", "dojo").subscribe(::println).also { println() }
 
-        // kotlin support 😎
-        asList("another", "coding", "dojo").toFlux().subscribe(::print)
+        // kotlin support
+        asList("another", "coding", "dojo").toFlux().subscribe(::println)
     }
 
     @Test
     fun `creation of a mono`() {
         Mono.just("astring").subscribe(::print)
 
-        // kotlin support 😎
+        // kotlin support
         "astring".toMono().subscribe(::print)
     }
 
