@@ -17,7 +17,7 @@ internal class FluxAndMonoExample {
     fun `creation of a flux`() {
         Flux.just("another", "coding", "dojo").subscribe(::println).also { println() }
 
-        // kotlin support
+        // kotlin support 😎
         asList("another", "coding", "dojo").toFlux().subscribe(::println)
     }
 
@@ -25,7 +25,7 @@ internal class FluxAndMonoExample {
     fun `creation of a mono`() {
         Mono.just("astring").subscribe(::print)
 
-        // kotlin support
+        // kotlin support 😎
         "astring".toMono().subscribe(::print)
     }
 
