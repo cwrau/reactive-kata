@@ -12,4 +12,3 @@ You have to wind up the project of your co-worker Jeff. The task is to build a d
 
 ## Dataflow
 ![](https://image.ibb.co/mYwJpz/Untitled_Diagram_1.png)
-
