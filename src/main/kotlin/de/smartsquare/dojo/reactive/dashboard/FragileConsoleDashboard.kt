@@ -1,26 +1,21 @@
 package de.smartsquare.dojo.reactive.dashboard
 
-import java.util.Random
-import java.util.logging.Logger
-
 /**
- * This class is a unstable dashboard which interacts as sink for the statistics
- * and uses the system console as user interface.
+ * This class is a dashboard which interacts as sink for statistics.
  */
 class FragileConsoleDashboard : Dashboard {
 
-    val log = Logger.getLogger("Fragile Console Dashboard")
+    var calls = 0
+    private val isThirdCall get() = calls == 2
 
     /**
-     * This method could be slow.
-     * @throws SomethingWentWrongException sometimes.
+     * This method usually needs a few attempts to work properly.
      */
-    override fun refresh(statistics: Statistics) =
-            when {
-                Random().nextInt() % 2 == 0 -> Thread.sleep(3000).also { log.warning("Timeout") }
-                Random().nextInt() % 3 == 0 -> throw SomethingWentWrongException("Boom!").also { log.warning("Error") }
-                else -> print(statistics)
-            }
-
-    class SomethingWentWrongException(message: String) : RuntimeException(message)
+    override fun refresh(statistics: Statistics) = if (isThirdCall) {
+        println(statistics)
+    } else {
+        calls++
+        println("Timeout...")
+        Thread.sleep(3000)
+    }
 }

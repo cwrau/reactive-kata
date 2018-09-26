@@ -73,8 +73,8 @@ test {
 dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
+
     implementation "io.projectreactor:reactor-core:$reactorVersion"
-    implementation "io.projectreactor.addons:reactor-extra:$reactorVersion"
 
     testImplementation "io.mockk:mockk:$mockkVersion"
     testImplementation "org.amshove.kluent:kluent:$kluentVersion"

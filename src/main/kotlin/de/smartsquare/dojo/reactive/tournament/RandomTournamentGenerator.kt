@@ -10,13 +10,13 @@ import java.util.Random
 class RandomTournamentGenerator : Tournament {
 
     /**
-     * @return a flux with a new random game every 10 milliseconds.
+     * @return a flux with a new random game every 100 milliseconds.
      */
-    override fun fetch() = Flux.interval(Duration.ofMillis(10)).map { generate() }
+    override fun fetch() = Flux.interval(Duration.ofMillis(100)).map { generate() }
 
     private fun generate(): Game {
-        val leftTeam = listOf("saschar", "deen", "drs", "alex", "alexr").shuffled().takeLast(2).map(::Player)
-        val rightTeam = listOf("ruby", "danielr", "skonair", "jens").shuffled().takeLast(2).map(::Player)
+        val leftTeam = listOf("saschar", "deen", "drs", "alex", "alexr").shuffled().takeLast(2)
+        val rightTeam = listOf("ruby", "danielr", "skonair", "jens").shuffled().takeLast(2)
         val goals = IntRange(1, 10)
                 .flatMap { leftTeam or rightTeam.shuffled().takeLast(1) }
 
@@ -24,5 +24,5 @@ class RandomTournamentGenerator : Tournament {
     }
 
     @Suppress("NOTHING_TO_INLINE", "FunctionMinLength")
-    private inline infix fun List<Player>.or(other: List<Player>) = if (Random().nextInt() % 2 == 0) this else other
+    private inline infix fun List<String>.or(other: List<String>) = if (Random().nextInt() % 2 == 0) this else other
 }
