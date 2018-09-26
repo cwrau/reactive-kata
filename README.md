@@ -7,7 +7,7 @@ You have to wind up the project of your co-worker Jeff. The task is to build a d
 
 ## Exercises 
 1. [Summarize](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/summarizer/StatisticsSummarizer.kt) the games streamed by the tournament per second in a [statistics](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/dashboard/Statistics.kt) object. 
-2. Wire everything up by implementing the [adapter](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/summarizer/StatisticsSummarizerDashboardAdapter.kt) to the [dashboard](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/dashboard/Dashboard.kt). _Note: The dashboard is very unstable and thereforce timeouts and exceptions can occour randomly._
+2. Wire everything up by implementing the [adapter](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/summarizer/Adapter.kt) to the [dashboard](https://github.com/socras/reactive-kata/blob/master/src/main/kotlin/de/smartsquare/dojo/reactive/dashboard/Dashboard.kt). _Note: The dashboard is very unstable and thereforce timeouts and exceptions can occour randomly._
 
 
 ## Dataflow
