@@ -2,9 +2,11 @@ package de.smartsquare.dojo.reactive.summarizer
 
 import de.smartsquare.dojo.reactive.dashboard.Dashboard
 import de.smartsquare.dojo.reactive.dashboard.FragileConsoleDashboard
-import de.smartsquare.dojo.reactive.summarizer.Adapter.Companion.connect
+import de.smartsquare.dojo.reactive.summarizer.Adapter.connect
 import de.smartsquare.dojo.reactive.tournament.RandomTournamentGenerator
+import reactor.core.publisher.Mono
 import java.lang.Thread.sleep
+import java.time.Duration
 
 fun main(args: Array<String>) {
     val tournament = RandomTournamentGenerator()
@@ -15,11 +17,15 @@ fun main(args: Array<String>) {
     sleep(10000)
 }
 
-class Adapter private constructor() {
-
-    companion object {
-
-        fun connect(source: StatisticsSummarizer, sink: Dashboard): Nothing =
-                TODO("Forward statistics to the dashboard and mind possible timeouts")
-    }
+object Adapter {
+    fun connect(source: StatisticsSummarizer, sink: Dashboard) = source
+        .summarizeGamesOfLastSecond()
+        .subscribe {
+            Mono.fromCallable {
+                sink.refresh(it)
+            }
+                .timeout(Duration.ofSeconds(1))
+                .retry()
+                .subscribe()
+        }
 }
