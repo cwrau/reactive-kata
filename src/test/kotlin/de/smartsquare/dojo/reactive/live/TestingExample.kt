@@ -5,8 +5,6 @@ import de.smartsquare.dojo.reactive.tournament.firstPlayer
 import de.smartsquare.dojo.reactive.tournament.secondPlayer
 import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
-import reactor.core.publisher.Flux
-import reactor.core.publisher.Mono
 import reactor.core.publisher.toFlux
 import reactor.test.StepVerifier
 import java.util.Arrays.asList
