@@ -18,16 +18,12 @@ internal class TestingExample {
     fun `expectation on a flux`() {
         val source = asList("foo", "bar").toFlux()
 
-        StepVerifier.create(
-                appendBoomError(source))
+        StepVerifier.create(source)
                 .expectNext("foo")
                 .expectNext("bar")
                 .expectErrorMessage("boom")
                 .verify()
     }
-
-    private fun <T> appendBoomError(source: Flux<T>): Flux<T> =
-            source.concatWith(Mono.error(IllegalArgumentException("boom")))
 
     @Test
     fun `expectation on an infinite flux`() {
