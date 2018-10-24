@@ -4,7 +4,6 @@ import de.smartsquare.dojo.reactive.tournament.Game
 import de.smartsquare.dojo.reactive.tournament.Tournament
 import io.mockk.every
 import io.mockk.mockk
-import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import reactor.core.publisher.Flux
 import reactor.test.StepVerifier
@@ -17,7 +16,6 @@ internal class StatisticsSummarizerSpecification {
     val summarizer = StatisticsSummarizer(tournament)
 
     @Test
-    @Disabled
     fun `create statistic of one game`() {
         every { tournament.fetch() } returns Flux.just(
                 Game(
@@ -38,7 +36,6 @@ internal class StatisticsSummarizerSpecification {
     }
 
     @Test
-    @Disabled
     fun `create statistic of two game`() {
         every { tournament.fetch() } returns Flux.just(
                 Game(
@@ -66,7 +63,6 @@ internal class StatisticsSummarizerSpecification {
     }
 
     @Test
-    @Disabled
     fun `player which does not scored a goal are not part of the statistics`() {
         every { tournament.fetch() } returns Flux.just(
                 Game(
@@ -82,7 +78,6 @@ internal class StatisticsSummarizerSpecification {
     }
 
     @Test
-    @Disabled
     fun `capture only one second`() {
         VirtualTimeScheduler.getOrSet()
 
@@ -107,7 +102,6 @@ internal class StatisticsSummarizerSpecification {
     }
 
     @Test
-    @Disabled
     fun `return infinite stream of statistics`() {
         VirtualTimeScheduler.getOrSet()
 
